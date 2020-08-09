@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2> Проверка формы </h2>
+
+	<table>
+		<tr>
+			<td>Логин: *</td>
+			<td><input type="text" id="in_login"></td>
+		</tr>
+
+		<tr>
+			<td>Пароль: *</td>
+			<td><input type="password" id="in_pass"></td>
+		</tr>
+
+		<tr>
+			<td>Подтверждите пароль: *</td>
+			<td><input type="password" id="in_passconfirm"></td>
+		</tr>
+
+		<tr>
+			<td>Email адрес: *</td>
+			<td><input type="text" id="in_mail"></td>
+		</tr>
+
+		<tr>
+			<td>Показывать Email: </td>
+			<td>
+				
+				<select id="select">
+					<option>Да</option>
+					<option>Нет</option>
+				</select>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Телефон</td>
+			<td><input type="text" id="in_phone"></td>
+		</tr>
+
+		<tr>
+			<td>О себе: *</td>
+			<td><textarea style="resize: none; height: 50px;" id="richtb"></textarea></td>
+		</tr>
+
+		<tr>
+			<td>Получать рассылку:</td>
+			<td><input type="checkbox" id="mailingcheck"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><button onclick="send();">Отправить</button></td>
+		</tr>
+	</table>
+
+	<script>
+		
+		function send(){
+
+			let login = in_login.value;
+			let pass = in_pass.value;
+			let cpass = in_passconfirm.value;
+			let mail = in_mail.value;
+			let showmail = select.value;
+			let phone = in_phone.value;
+			let comments = richtb.value;
+
+			let mailing;
+			if(mailingcheck.checked) mailing = 'Да';
+			else mailing = 'Нет';
+
+			alert('Ваши данные:' + '\nЛогин: ' + login + '\nПароль: ' + pass + '\nПодтверждение пароля: ' + cpass + '\nПочта: ' + mail + '\nПоказывать почту: ' + showmail + '\nТелефон: ' + phone + '\nО себе: ' + comments + '\nПолучать рассылку: ' + mailing);
+
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>User Input Form</title>
+</head>
+<body>
+   <style>
+   	input:invalid {
+    border: 2px solid red;
+}
+   </style>
+	<h1>User Input Form</h1>
+	
+    <form action="">
+    	<fieldset>
+    		<legend>Personal Particular</legend>
+    		
+    		<p>Name: <input type="text" id="nameS" minlength="1" required="true" pattern="^[а-яА-ЯеЁa-zA-Z]+$"></p>
+    		<p>Password: <input type="password" id="password" required="true" minlength="6"></p>
+    		<p>Gender:
+		<input id="male" type="radio" name="r" onclick="" checked="true">Male
+		<input id="female" type="radio" name="r" onclick="" >Female</p>
+	    <p>Age: <select id="select_id" required="true">
+			<option> < 1 year old</option>
+			<option> 1 - 18 years old</option>
+			<option> > 18 years old </option>
+		</select></p>
+    	
+
+
+    	</fieldset>
+
+    	<fieldset>
+    		<legend>Languages</legend>
+    		<p><input type="checkbox">Java
+    		<input type="checkbox">C/C++
+    		<input type="checkbox">C#</p>
+    	</fieldset>
+
+        <fieldset>
+        	<legend>Instruction</legend>
+        	<textarea name="Instruction" id="" cols="30" rows="10" minlength="1" required="true">Enter your instruction here...
+        	</textarea>
+        </fieldset>
+        <p>
+ 	<input type="submit" value="SEND" style="width:100px;" onclick="openWin()">
+ 	<input type="reset" value="CLEAR" style="width:100px;">
+ 		</p>
+    </form>
+	
+	<script>
+
+		//window.onload = function(){ 
+		//	alert("Привет");
+	    //	}
+
+      function openWin(){
+       var newWin = window.open("about:blank", "hello", "width=200,height=200");
+
+      
+       newWin.document.write("Name: " + nameS.value + "<br>");
+       newWin.document.write("Password: " + password.value + "<br>");
+       let gender = "Male";
+
+       if(female.checked == true)
+       	gender = "female";
+
+       newWin.document.write("Gender: " + gender + "<br>");
+       newWin.document.write("Age: " + select_id.value + "<br>");
+
+
+     }
+
+	</script>
+
+
+
+
+</body>
+</html>

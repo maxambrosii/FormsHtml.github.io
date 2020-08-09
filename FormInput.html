@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Задание 30 10 2019 </title>
+</head>
+<body>
+
+	<h2>Ввод данных</h2>
+
+	<table>
+		<tr>
+			<td>Имя: </td>
+			<td><input type="text" id="in_name"></ins></td>
+		</tr>
+
+		<tr>
+			<td>Пароль: </td>
+			<td><input type="password" id="in_pass"></td>
+		</tr>
+
+		<tr>
+			<td>Типы: </td>
+			<td><input type="checkbox" name="check" id="cb1"> Компьютер <br> <input type="checkbox" name="check" id="cb2"> Принтер <br> <input type="radio" name="radio" id="rb1"> CD-ROM <br> <input type="radio" name="radio" id="rb2"> DVD-ROM </td>
+		</tr>
+
+		<tr>
+			<td>Мультимедия</td>
+			<td>
+				
+				<select>
+					<option>Колонки</option>
+					<option>Звуковая плата</option>
+					<option>Наушники</option>
+					<option>Микрофон</option>
+				</select>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Другие опции</td>
+			<td><textarea style="resize: none; height: 50px;" id="more_options"></textarea></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><button id="btnSearchOption"> Найти опцию </button></td>
+		</tr>
+
+		<tr>
+			<td>Выбранные опции</td>
+			<td><textarea style="resize: none; height: 50px;" id="selected_options"></textarea></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><button id="btnSend" onclick="send();"> Отправить </button></td>
+		</tr>
+	</table>
+
+	<script>
+		
+		function send(){
+
+			let name = in_name.value;
+			let pass = in_pass.value;
+
+			let types = '';
+			if(cb1.checked) types += ' Компьютер ';
+			if(cb2.checked) types += ' Принтер ';
+			if(rb1.checked) types += ' CD-ROM ';
+			else if(rb2.checked) types += ' DVD-ROM';
+
+			let multimedia = '';
+
+
+			alert('Ваши данные: ' + '\nИмя: ' + name + '\nПароль: ' + pass + '\nТипы: ' + types);
+
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<h2> Регистрация </h2>
+
+	<table>
+		
+		<tr>
+			<td>Имя</td>
+			<td><input type="text" id="in_name" value=""></td>
+		</tr>
+
+		<tr>
+			<td>Электронный адрес</td>
+			<td><input type="email" id="in_mail" value=""></td>
+		</tr>
+
+		<tr>
+			<td>Пароль</td>
+			<td><input type="text" id="in_pass" value=""></td>
+		</tr>
+
+		<tr>
+			<td>Подтвердить пароль</td>
+			<td><input type="text" id="in_confirmpass" value=""></td>
+		</tr>
+
+		<tr>
+			<td>Хобби</td>
+			<td><input type="checkbox" id="hb1"> Плаванье <br> <input type="checkbox" id="hb2"> Чтение <br> <input type="checkbox" id="hb3"> Ничего неделанье</td>
+		</tr>
+
+		<tr>
+			<td>Дата рождения</td>
+			<td><input type="date" value="" id="datetime"></td>
+		</tr>
+
+		<tr>
+			<td>Страна рождения</td>
+			<td>
+				
+				<select id="select">
+			    	<option>Молдова</option>
+			      	<option>Россия</option>
+			      	<option>Швеция</option>
+			      	<option>Бельгия</option>
+			      	<option>Турция</option>
+			    </select>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Комментарии</td>
+			<td><textarea style="resize: none; height: 50px;" id="richtb"></textarea></td>
+		</tr>
+
+		<tr>
+			<td>Вы хотите получать нашу рассылку?</td>
+			<td><input type="radio" id="radioYes" name="rb"> Да <br> <input type="radio" id="radioOfCourse" name="rb"> Конечно <br> <input type="radio" id="radioWithPleasure" name="rb"> С удовольствием</td>
+		</tr>
+
+		<tr>
+			<td><br></td>
+			<td><button id="btnSend" onclick="send();"> Отправить </button></td>
+		</tr>
+	</table>
+
+	<script>
+		
+		function send(){
+			
+			let nm = in_name.value;
+			let email = in_mail.value;
+			let pass = in_pass.value;
+			let cpass = in_confirmpass.value;
+
+			let hobby = '';
+			if(hb1.checked) hobby += ' Плаванье ';
+			if(hb2.checked) hobby += ' Чтение ';
+			if(hb3.checked) hobby += ' Ничего неделанье ';
+
+			let date = datetime.value;
+			let country = select.value;
+			let comments = richtb.value;
+
+			let mailing;
+			if(radioYes.checked) mailing = 'Да';
+			if(radioOfCourse.checked) mailing = 'Конечно';
+			if(radioWithPleasure.checked) mailing = 'С удовольствием';
+
+			alert('Ваши данные:\n' + 'Имя: ' + nm + '\n'+ 'Почта: ' + email + '\n' + 'Пароль: ' +  pass + '\n' + 'Подтверждение пароля: ' + cpass + '\n' + 'Хобби: ' + hobby + '\n' + 'Дата: ' + date + '\n' + 'Страна: ' + country + '\n' + 'Комментарии: ' + comments + '\n' + 'Рассылка: ' + mailing);
+
+		}
+
+	</script>
+</body>
+</html>
